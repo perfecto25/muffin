@@ -53,16 +53,16 @@ def run_tcp(data, args):
         count = 0
         for group in dictor(data, 'tcp'):
             for feed in (dictor(data, f'tcp.{group}')):                
-                ip = dictor(data, f"tcp.{group}.{feed}.ip")
+                ip = dictor(data, f'tcp.{group}.{feed}.ip')
                 count += 1
                 
                 # if multiple ports
-                if dictor(data, f"tcp.{group}.{feed}.ports"):
-                    ports = dictor(data, f"tcp.{group}.{feed}.ports")
+                if dictor(data, f'tcp.{group}.{feed}.ports'):
+                    ports = dictor(data, f'tcp.{group}.{feed}.ports')
                     
                     # comma separated list of ports, ie 1200,1201,1202
                     if ',' in ports:
-                        ports = dictor(data, f"tcp.{group}.{feed}.ports").split(',')
+                        ports = dictor(data, f'tcp.{group}.{feed}.ports').split(',')
                         ports = list(set(sorted(ports)))
                         
                     # range of ports, ie 1200-1205
