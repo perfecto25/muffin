@@ -23,7 +23,7 @@ multicast:
     port-range-2: { ip: 233.157.204.100, ports: "20114-20116" }
     
     # can also specify specific interface IP over which to bind to Mcast group
-    snapshot-3: { ip: 233.157.204.100, port: 20114, iface: 192.168.1.10 }
+    specific-iface: { ip: 233.157.204.100, port: 20114, iface: 192.168.1.10 }
     
 ## define TCP connections
 tcp:
