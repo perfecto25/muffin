@@ -72,9 +72,16 @@ open config.py and update your preferences
 run 
 
     ./scan.py
-    
 
+Muffin will output connection attempt to each configured Multicast or TCP IP and port
+
+for TCP connections, it will also show you the route gateway over which the IP is being connected to, ie,
+```
+1 [tcp] CME Futures Feed A Received 120.22.3.3:20010 **via 192.168.10.3**
+```
     
+---
+
 ## Additional command line flags
 
     # update config.py 'feed_files' variable with location of your YAML feed files
