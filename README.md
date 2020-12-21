@@ -51,7 +51,6 @@ open config.py and update your preferences
 - feed_files = path to your YAML feed
 - mc_timeout = multicast timeout in seconds
 - tcp_timeout = tcp timeout in seconds
-- record_file = json file which records your inbound connections (optional)
 - hosts = on each host where you run Muffin, update the Solarflare or interface IPs which you use to bind to multicast groups. (this can also be done directly in the feed YAML using "iface", see **feeds/mktdata.yaml**, line 23)
 
 --- 
