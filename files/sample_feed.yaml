@@ -1,0 +1,36 @@
+---
+## sample Muffin Feed file
+# showing different ways to structure connectivity information
+
+multicast:
+  # 1st key is name of your connection
+  ICE Endex Options:
+    # subkeys are multicast group names
+    top10pl-live:
+      ip: 233.444.208.116
+      port: 20116
+    top10pl-snapshot:
+      ip: 233.333.208.117
+      port: 20117
+
+  # connection name
+  ICE Futures:
+    # can also add as one-line
+    groupname-1-liner: { ip: 233.222.201.104, port: 20114 }
+
+    # or without key, val
+    groupname-no-key-val: 233.222.201.104:20114
+
+    # can also give portrange, using comma or dash
+    groupname-port-range-1: { ip: 233.123.204.100, port: "20114,20115,20116" }
+    groupname-port-range-2: { ip: 233.123.204.100, port: "20114-20116" }
+
+    # can also specify specific interface IP over which to bind to Mcast group
+    groupname-specific-iface: { ip: 233.157.204.100, port: 20114, iface: 192.168.1.10 }
+
+## define TCP connections
+tcp:
+  ICE TCP test:
+    snapshot: { ip: 123.23.1.1, port: 20010 }
+    snapshot-range: { ip: 123.23.1.1, port: "2000-2010" }
+    snapshot-no-key-val: 123.23.1.1:2000

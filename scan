@@ -1,0 +1,9 @@
+#!/bin/sh
+
+## Entry point for Muffin scanner
+
+base_dir=$(dirname -- "$( readlink -f -- "$0"; )";)
+
+[ -d "${base_dir}/venv" ] || { echo "Muffin VirtualEnv directory does not exist at ${base_dir}. "; exit 1; }
+
+exec "$base_dir/venv/bin/python3" "$base_dir/run.py" "$@"

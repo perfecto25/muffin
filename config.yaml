@@ -1,0 +1,30 @@
+# Muffin Scanner config file
+
+# multicast timeout in seconds
+mc_timeout: 45
+
+# TCP connection timeout in seconds
+tcp_timeout: 3
+
+# record JSON file (record historical netstat connections to this file)
+record_file: record.json
+
+sf_ifaces: ["p1p1", "p1p2", "p2p1", "p2p2", "bond0"] # default list of solarflare ifaces
+
+# send email on any feed that's down
+alert_errors: True
+alert_email: "user@company.com"
+
+hosts:
+# ----------------
+  host1: # will check traffic over default sf_ifaces
+    feeds:
+      prod: /path/to/prod/yaml-feed-file/folder
+# ----------------
+  host2:  # will check traffic over specific ifaces below
+    ifaces: ["10.20.220.221", "10.21.225.100", "10.36.21.2"] # provide specific iface IPs on which to check mktdata
+    feeds:
+      prod: /path/to/prod/yaml-feed-file/folder
+      uat : /path/to/uat/yaml-feed-file/folder
+
+
